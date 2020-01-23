@@ -1,0 +1,14 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+  name: config-management
+spec:
+  # clusterName is required and must be unique among all managed clusters
+  clusterName: test3
+  git:
+    syncRepo: https://github.com/davidebbo-test/hipster.git
+    syncBranch: master
+    secretType: none
+    #policyDir: "foo-corp"
+  # configConnector:
+  #   enabled: true
